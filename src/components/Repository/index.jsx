@@ -21,12 +21,12 @@ const Repository = (props) => {
             selectedTabPanelClassName='is-selected'    
         >
             <TabListWrapper>
-                <TabWrapper>Repositories {githubData.repos && <span>({githubData.repos.length})</span>}</TabWrapper>
-                <TabWrapper>Starred {githubData.starred && <span>({githubData.starred.length})</span>}</TabWrapper>
+                <TabWrapper>Repositories {githubData?.repos && <span>({githubData.repos.length})</span>}</TabWrapper>
+                <TabWrapper>Starred {githubData?.starred && <span>({githubData.starred.length})</span>}</TabWrapper>
             </TabListWrapper>
 
             <TabPanelWrapper id='panel-list-1'>
-                {githubData.repos.map((repo) => (
+                {githubData?.repos?.map((repo) => (
                       <RepositoryItem 
                       key={repo.id}
                       name={repo.name}
@@ -38,7 +38,7 @@ const Repository = (props) => {
             </TabPanelWrapper>
 
             <TabPanelWrapper id='panel-list-2'>
-                {githubData.starred.map((starred) => (
+                {githubData?.starred?.map((starred) => (
                       <RepositoryItem 
                       key={starred.id}
                       name={starred.name}
